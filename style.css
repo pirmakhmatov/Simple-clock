@@ -1,0 +1,33 @@
+*{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: #fff;
+        /* position: relative; */
+}
+
+.container{
+        position:absolute;
+        width: 600px;
+        height: fit-content;
+        background: linear-gradient( 45deg, #08001f, #30197d);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        border-radius: 59px;
+}
+
+.clock{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+
+.clock span{
+        width: 60px;
+        text-align: center;
+        font-size: 70px;
+        display: inline-block;
+        position: relative;
+}

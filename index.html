@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <i class="fa-solid fa-star" style="color: #494f5b;"></i>
+    <div class="container">
+        <div class="clock">
+            <span class="hrs" id="hrs">00</span>
+            <span class="dot" id="dot">:</span>
+            <span class="min" id="min">00</span>
+            <span class="dot" id="dot">:</span>
+            <span class="sec" id="sec">00</span>
+        </div>
+    </div>
+
+<script>
+    let hrs = document.getElementById("hrs")
+    let min = document.getElementById("min")
+    let sec = document.getElementById("sec")
+
+    let timer = (()=>{
+        let time = new Date()
+
+        hrs.innerHTML = time.getHours().toString().padStart(2,"0") 
+        min.innerHTML = time.getMinutes().toString().padStart(2,"0") 
+        sec.innerHTML = time.getSeconds().toString().padStart(2,"0") 
+    })
+timer()
+setInterval(timer,1000)
+
+// let myPromise = new Promise((resolve,reject)=> {
+//     let success = 0
+//     if (success) {
+//      resolve("O'xshadi")
+//     }
+//   else{
+//     reject("Xato")
+//   }  
+        
+// })
+
+// myPromise.then((resolve)   =>
+//     console.log(resolve)).catch((resolve)=> console.log(resolve))
+
+let fetchData = new Promise((res,rej)=>{
+    console.log(
+    "🌐️ Ma'lumot yuklanmoqda..."
+    );
+
+    let success = Math.random()
+    setTimeout(()=>{
+if (success > 0.7) {
+    res("✅️ Ma'lumot: {id: 1, name: 'Javascript darsi' duration: '2 soat'}")}
+  else{
+    rej("❌️ Ma'lumot yuklab bo'lmadi!")
+  }
+},2000)
+
+})
+fetchData.then((res) => console.log(res))
+.catch((rej) => console.log(rej)) 
+.finally(() => console.log("🆗️ Jarayon Tugadi.")),500;
+</script>
+</body>
+</html>
